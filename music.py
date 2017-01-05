@@ -35,9 +35,10 @@ def clear():
         os.remove(item)
 
 
-mixer.init()
 goto_ensure_dir('music/')
 playlist = []
 
-# https://pypi.python.org/pypi/musicplayer
-# https://github.com/jiaaro/pydub#installation
+"""
+https://pypi.python.org/pypi/musicplayer
+https://github.com/jiaaro/pydub#installation
+"""
