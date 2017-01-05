@@ -11,14 +11,14 @@ def goto_ensure_dir(f):
     os.chdir(d)
 
 
-def download_audio(youtubeURL):
-    urlStart='http://www.youtubeinmp3.com/fetch/?video='
-    url = urlStart+youtubeURL
-    fileName = youtubeURL[youtubeURL.index('=')+1:]+'.mp3'
+def download_audio(youtube_url):
+    url_start = 'http://www.youtubeinmp3.com/fetch/?video='
+    url = url_start + youtube_url
+    file_name = youtube_url[youtube_url.index('=') + 1:] + '.mp3'
 
-    urllib.request.urlretrieve(url, fileName)
+    urllib.request.urlretrieve(url, file_name)
 
-    return fileName
+    return file_name
 
 
 def dl():
@@ -34,18 +34,10 @@ def clear():
     for item in glob.glob('*'):
         os.remove(item)
 
+
 mixer.init()
 goto_ensure_dir('music/')
 playlist = []
 
-
-
-#CHECK OUT PYDUB
-#CHECK OUT PYDUB
-#CHECK OUT PYDUB
-#CHECK OUT PYDUB
-#CHECK OUT PYDUB
-#CHECK OUT PYDUB
-#CHECK OUT PYDUB
-#CHECK OUT PYDUB
-#CHECK OUT PYDUB
+# https://pypi.python.org/pypi/musicplayer
+# https://github.com/jiaaro/pydub#installation
