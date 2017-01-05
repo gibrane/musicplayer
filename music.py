@@ -2,7 +2,6 @@ import urllib.request
 import os
 import asyncio
 import glob
-from pygame import mixer
 
 
 def goto_ensure_dir(f):
@@ -28,9 +27,7 @@ def dl():
 
 
 def play_playlist():
-    mixer.music.load(playlist[0])
-    mixer.music.play()
-    mixer.music.set_endevent()
+    pass
 
 
 def clear():
@@ -40,3 +37,15 @@ def clear():
 mixer.init()
 goto_ensure_dir('music/')
 playlist = []
+
+
+
+#CHECK OUT PYDUB
+#CHECK OUT PYDUB
+#CHECK OUT PYDUB
+#CHECK OUT PYDUB
+#CHECK OUT PYDUB
+#CHECK OUT PYDUB
+#CHECK OUT PYDUB
+#CHECK OUT PYDUB
+#CHECK OUT PYDUB
