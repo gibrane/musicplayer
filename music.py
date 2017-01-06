@@ -2,7 +2,7 @@ import urllib.request
 import os
 import asyncio
 import glob
-
+from pygame import mixer
 
 def goto_ensure_dir(f):
     d = os.path.dirname(f)
@@ -22,12 +22,12 @@ def download_audio(youtube_url):
 
 
 def dl():
-    playlist.append(download_audio('https://www.youtube.com/watch?v=dQw4w9WgXcQ'))
+    playlist.append(download_audio('http://www.youtube.com/watch?v=btNs5wxTJ2k'))
     playlist.append(download_audio('https://www.youtube.com/watch?v=ENXvZ9YRjbo'))
 
 
 def play_playlist():
-    pass
+    
 
 
 def clear():
@@ -38,7 +38,4 @@ def clear():
 goto_ensure_dir('music/')
 playlist = []
 
-"""
-https://pypi.python.org/pypi/musicplayer
-https://github.com/jiaaro/pydub#installation
-"""
+mixer.init()
