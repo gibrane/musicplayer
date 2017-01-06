@@ -2,7 +2,7 @@ import urllib.request
 import os
 import asyncio
 import glob
-from pygame import mixer
+from pygame import mixer, event
 
 def goto_ensure_dir(f):
     d = os.path.dirname(f)
@@ -27,7 +27,15 @@ def dl():
 
 
 def play_playlist():
-    pass
+    mixer.music.load(playlist[0])
+    mixer.music.play()
+    mixer.music.set_endevent(SONG_END)
+    while True:
+        for event in event.get():
+            break
+        break
+        
+        
     
 
 
