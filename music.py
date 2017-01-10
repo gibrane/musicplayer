@@ -1,7 +1,7 @@
 import urllib.request
 import os
 import glob
-from pygame import mixer, event, USEREVENT, init
+from pygame import *
 
 def goto_ensure_dir(f):
     d = os.path.dirname(f)
@@ -32,26 +32,41 @@ def add_song(file_name):
 def play_next_song():
     global playlist
     global queue
-    mixer.music.load(playlist[queue])
+    song_name=playlist[0]
+    mixer.music.load(song_name)
     mixer.music.play()
+    try:
+        playlist.remove(song_name)
+    except:
+        pass
     mixer.music.set_endevent(USEREVENT+1)
-    queue += 1
+    
+        
 
 def play_playlist():
+    global queue
     play_next_song()
     
     while True:
         for act in event.get():
-            if act.type == USEREVENT+1:  
-                play_next_song()
+            if act.type == USEREVENT+1:
+                if playlist == []:
+                    break
+                else:
+                    play_next_song()
+                
         
         
     
 
 
 def clear():
+    global queue
+    global playlist
     for item in glob.glob('*'):
         os.remove(item)
+    queue=0
+    playlist = []
 
 
 init()
